@@ -1,7 +1,5 @@
 package com.example.springboot.test.service.impl;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,9 +15,9 @@ public class TestServiceImpl implements TestService {
 	
 	public void test() {
 		TestEntity test = new TestEntity();
-		test.setId("test01");
-		test.setName("user");
-		test.setPassword("qwer1234");
+		test.setId("test00");
+		test.setName("user00");
+		test.setPassword("qwer00");
 		testRepository.save(test); 
 	}
 	
