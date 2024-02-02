@@ -9,7 +9,7 @@ public interface CommCdService {
 	public List<ClsCdDTO> selectClsCd(ClsCdDTO dto) throws Exception;
 	public List<CodeCdDTO> selectCodeCd(CodeCdDTO dto) throws Exception;
 	public String insertClsCd(ClsCdDTO dto) throws Exception;
-	public String insertCodeCd(CodeCdDTO dto) throws Exception;
+	public String insertCodeCd(List<CodeCdDTO> list) throws Exception;
 	public String deleteClsCd(ClsCdDTO dto) throws Exception;
 	public String deleteCodeCd(CodeCdDTO dto) throws Exception;
 	public String updateClsCd(ClsCdDTO dto) throws Exception;

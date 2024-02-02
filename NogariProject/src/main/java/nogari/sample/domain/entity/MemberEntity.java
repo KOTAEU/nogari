@@ -3,7 +3,7 @@ package nogari.sample.domain.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name="MEMBER_KTW")
+@Table(schema = "ADMIN", name="MEMBER_KTW")
 public class MemberEntity {
 	
 	@Id

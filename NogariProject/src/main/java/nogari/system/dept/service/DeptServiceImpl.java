@@ -17,9 +17,9 @@ public class DeptServiceImpl implements DeptService{
 	@Resource
 	private DeptMapper mapper;
 
-	public List<DeptDTO> selectDept(DeptDTO dto) throws Exception {
+	public List<DeptDTO> selectDept(String deptCd) throws Exception {
 		
-		return mapper.selectDept(dto);
+		return mapper.selectDept(deptCd);
 	}
 	
 	public String insertDept(DeptDTO dto) throws Exception {

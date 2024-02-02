@@ -29,22 +29,23 @@ public class CommCdServiceImpl implements CommCdService {
 	
 	public String insertClsCd(ClsCdDTO dto) throws Exception {
 		if(mapper.selectClsCdChk(dto)!=0) {
-			return "중복 코드";
+			return dto.getClsCd() + " : 중복 코드";
 		}else {
 			mapper.insertClsCd(dto);
-			
 			return "insert 완료";
 		}
 	}
 	
-	public String insertCodeCd(CodeCdDTO dto) throws Exception {
-		if(mapper.selectCodeCdChk(dto)!=0) {
-			return "중복 코드";
-		}else {
-			mapper.insertCodeCd(dto);
-			
-			return "insert 완료";
-		}
+	public String insertCodeCd(List<CodeCdDTO> list) throws Exception {
+		String result = "";
+		for(CodeCdDTO dto : list)
+			if(mapper.selectCodeCdChk(dto)!=0) {
+				result += dto.getCodeCd() + " : 중복 코드\n";
+			}else {
+				mapper.insertCodeCd(dto);
+				result += dto.getCodeCd() + " : 저장 완료\n";
+			}
+		return result;
 	}
 	
 	public String deleteClsCd(ClsCdDTO dto) throws Exception {

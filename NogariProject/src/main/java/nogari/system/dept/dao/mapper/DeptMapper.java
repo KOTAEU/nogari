@@ -8,7 +8,7 @@ import nogari.system.dept.domain.dto.DeptDTO;
 
 @Mapper
 public interface DeptMapper {
-	List<DeptDTO> selectDept(DeptDTO dto);
+	List<DeptDTO> selectDept(String deptCd);
 	void insertDept(DeptDTO dto);
 	void deleteDept(DeptDTO dto);
 	void updateDept(DeptDTO dto);

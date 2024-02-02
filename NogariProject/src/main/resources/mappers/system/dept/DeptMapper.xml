@@ -4,7 +4,7 @@
 <mapper namespace="nogari.system.dept.dao.mapper.DeptMapper">
 
 	<!-- 부서 조회 -->
-    <select id="selectDept" parameterType="nogari.system.dept.domain.dto.DeptDTO" resultType="HashMap">
+    <select id="selectDept" parameterType="String" resultType="HashMap">
         SELECT DEPT_CD
              , DEPT_NM
              , MGR_ID
@@ -13,7 +13,7 @@
              , USE_YN
           FROM DEPT
          WHERE 1=1
-        <if test="deptCd != '' and deptCd != null">
+        <if test="_parameter != '' and _parameter != null">
            AND DEPT_CD = #{deptCd}
         </if>
            AND USE_YN = 'Y'
